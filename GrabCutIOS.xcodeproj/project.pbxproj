@@ -21,7 +21,6 @@
 		905F61041B919E8C00094E52 /* GrabCutIOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 905F61031B919E8C00094E52 /* GrabCutIOSTests.m */; };
 		905F610E1B91A2C800094E52 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 905F610D1B91A2C800094E52 /* opencv2.framework */; };
 		905F61161B91A43B00094E52 /* GrabCutManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 905F61121B91A43B00094E52 /* GrabCutManager.mm */; };
-		905F61181B91A43B00094E52 /* TouchDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 905F61151B91A43B00094E52 /* TouchDrawView.m */; };
 		90DE070C1B92A4FA009311B8 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90DE070B1B92A4FA009311B8 /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,8 +58,6 @@
 		905F61101B91A3B700094E52 /* GrabCutIOSPrefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GrabCutIOSPrefix.pch; sourceTree = "<group>"; };
 		905F61111B91A43B00094E52 /* GrabCutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrabCutManager.h; sourceTree = "<group>"; };
 		905F61121B91A43B00094E52 /* GrabCutManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GrabCutManager.mm; sourceTree = "<group>"; };
-		905F61141B91A43B00094E52 /* TouchDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchDrawView.h; sourceTree = "<group>"; };
-		905F61151B91A43B00094E52 /* TouchDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchDrawView.m; sourceTree = "<group>"; };
 		90DE070B1B92A4FA009311B8 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -126,10 +123,8 @@
 				580EB0AE1F0F758000435BE3 /* Utilities.swift */,
 				905F61111B91A43B00094E52 /* GrabCutManager.h */,
 				905F61121B91A43B00094E52 /* GrabCutManager.mm */,
-				905F61141B91A43B00094E52 /* TouchDrawView.h */,
 				585312FB1F0E7A8D001B2787 /* GrabCutWrapper.h */,
 				585312FC1F0E7A8D001B2787 /* GrabCutWrapper.mm */,
-				905F61151B91A43B00094E52 /* TouchDrawView.m */,
 				905F60EB1B919E8C00094E52 /* AppDelegate.h */,
 				905F60EC1B919E8C00094E52 /* AppDelegate.m */,
 				905F60F11B919E8C00094E52 /* Main.storyboard */,
@@ -270,7 +265,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				905F61161B91A43B00094E52 /* GrabCutManager.mm in Sources */,
-				905F61181B91A43B00094E52 /* TouchDrawView.m in Sources */,
 				585312FD1F0E7A8D001B2787 /* GrabCutWrapper.mm in Sources */,
 				905F60ED1B919E8C00094E52 /* AppDelegate.m in Sources */,
 				580EB0AF1F0F758100435BE3 /* Utilities.swift in Sources */,
