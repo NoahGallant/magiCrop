@@ -16,10 +16,35 @@ const static int MAX_IMAGE_LENGTH = 450;
 
 -(UIImage*) doGrabcut: (UIImage*)source foregroundBound:(CGRect) rect{
     GrabCutManager* grabcut = [[GrabCutManager alloc] init];
-    UIImage* originalImage = [self resizeWithRotation:source size:source.size];
-    UIImage* resizedImage = [self getProperResizedImage:originalImage];
-    UIImage* resultImage = [grabcut doGrabCut:resizedImage foregroundBound:rect iterationCount:5];
+    UIImage* resultImage = [grabcut doGrabCut:source foregroundBound:rect iterationCount:5];
     return resultImage;
+}
+
+-(UIImage*) doGrabcutWithMask: (UIImage*)source mask:(UIImage*) maskImage{
+    GrabCutManager* grabcut = [[GrabCutManager alloc] init];
+    UIImage* resultImage = [grabcut doGrabCutWithMask:source maskImage:maskImage iterationCount:5];
+    return resultImage;
+}
+
+-(UIImage *) masking:(UIImage*)sourceImage mask:(UIImage*) maskImage{
+    //Mask Image
+    CGImageRef maskRef = maskImage.CGImage;
+    
+    CGImageRef mask = CGImageMaskCreate(CGImageGetWidth(maskRef),
+                                        CGImageGetHeight(maskRef),
+                                        CGImageGetBitsPerComponent(maskRef),
+                                        CGImageGetBitsPerPixel(maskRef),
+                                        CGImageGetBytesPerRow(maskRef),
+                                        CGImageGetDataProvider(maskRef), NULL, false);
+    
+    CGImageRef masked = CGImageCreateWithMask([sourceImage CGImage], mask);
+    CGImageRelease(mask);
+    
+    UIImage *maskedImage = [UIImage imageWithCGImage:masked];
+    
+    CGImageRelease(masked);
+    
+    return maskedImage;
 }
 
 -(UIImage *) getProperResizedImage:(UIImage*)original{
@@ -97,27 +122,6 @@ const static int MAX_IMAGE_LENGTH = 450;
     CGImageRelease(ref);
     
     return newImage;
-}
-
--(UIImage *) masking:(UIImage*)sourceImage mask:(UIImage*) maskImage{
-    //Mask Image
-    CGImageRef maskRef = maskImage.CGImage;
-    
-    CGImageRef mask = CGImageMaskCreate(CGImageGetWidth(maskRef),
-                                        CGImageGetHeight(maskRef),
-                                        CGImageGetBitsPerComponent(maskRef),
-                                        CGImageGetBitsPerPixel(maskRef),
-                                        CGImageGetBytesPerRow(maskRef),
-                                        CGImageGetDataProvider(maskRef), NULL, false);
-    
-    CGImageRef masked = CGImageCreateWithMask([sourceImage CGImage], mask);
-    CGImageRelease(mask);
-    
-    UIImage *maskedImage = [UIImage imageWithCGImage:masked];
-    
-    CGImageRelease(masked);
-    
-    return maskedImage;
 }
 
 -(CGSize) getResizeForTimeReduce:(UIImage*) image{

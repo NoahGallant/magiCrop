@@ -106,7 +106,7 @@
     
     free(rawData);
     
-    NSLog(@"Count %d %d %d sum : %d width*height : %d", countFGD, countBGD, countRem, countFGD+countBGD + countRem, width*height);
+    NSLog(@"Count %d %d %d sum : %d width*height : %lu", countFGD, countBGD, countRem, countFGD+countBGD + countRem, width*height);
     
     return markers;
 }
@@ -270,6 +270,8 @@
 -(UIImage*) doGrabCutWithMask:(UIImage*)sourceImage maskImage:(UIImage*)maskImage iterationCount:(int) iterCount{
     cv::Mat img=[self cvMatFromUIImage:sourceImage];
     cv::cvtColor(img , img , CV_RGBA2RGB);
+    
+    
     
     cv::Mat1b markers=[self cvMatMaskerFromUIImage:maskImage];
     cv::Rect rectangle(0,0,0,0);

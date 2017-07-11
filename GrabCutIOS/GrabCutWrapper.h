@@ -11,6 +11,8 @@
 
 @interface GrabCutWrapper : NSObject
 
+-(UIImage*) doGrabcutWithMask: (UIImage*)source mask:(UIImage*) maskImage;
 -(UIImage*) doGrabcut: (UIImage*)source foregroundBound:(CGRect) rect;
+-(UIImage *) masking:(UIImage*)sourceImage mask:(UIImage*) maskImage;
 
 @end

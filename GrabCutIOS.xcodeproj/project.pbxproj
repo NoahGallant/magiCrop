@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		580EB0AF1F0F758100435BE3 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580EB0AE1F0F758000435BE3 /* Utilities.swift */; };
 		585312F11F0E65E6001B2787 /* Vision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585312F01F0E65D7001B2787 /* Vision.framework */; };
 		585312F41F0E7339001B2787 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585312F31F0E7339001B2787 /* Home.swift */; };
 		585312F71F0E74A5001B2787 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585312F51F0E7499001B2787 /* CoreGraphics.framework */; };
 		585312F81F0E74AD001B2787 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585312F61F0E7499001B2787 /* CoreImage.framework */; };
 		585312FD1F0E7A8D001B2787 /* GrabCutWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 585312FC1F0E7A8D001B2787 /* GrabCutWrapper.mm */; };
+		586820B61F139C8400970640 /* DrawableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586820B51F139C8400970640 /* DrawableView.swift */; };
+		58C0B9141F14DA060085680B /* TinyYOLO.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 58C0B9131F14DA060085680B /* TinyYOLO.mlmodel */; };
+		58C0B9161F14DA4A0085680B /* YOLO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C0B9151F14DA490085680B /* YOLO.swift */; };
+		58C0B9181F14DB1F0085680B /* UIImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C0B9171F14DB1F0085680B /* UIImage+CVPixelBuffer.swift */; };
+		58C0B91A1F14DB240085680B /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C0B9191F14DB240085680B /* Helpers.swift */; };
+		58C0B91C1F14DB270085680B /* CVPixelBuffer+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C0B91B1F14DB270085680B /* CVPixelBuffer+Helpers.swift */; };
 		905F60EA1B919E8C00094E52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 905F60E91B919E8C00094E52 /* main.m */; };
 		905F60ED1B919E8C00094E52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 905F60EC1B919E8C00094E52 /* AppDelegate.m */; };
 		905F60F31B919E8C00094E52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 905F60F11B919E8C00094E52 /* Main.storyboard */; };
@@ -35,7 +40,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		580EB0AE1F0F758000435BE3 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = "../../../../Offline/ImageClassificationwithVisionandCoreML/Vision+ML Example/Utilities.swift"; sourceTree = "<group>"; };
 		585312F01F0E65D7001B2787 /* Vision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Vision.framework; path = System/Library/Frameworks/Vision.framework; sourceTree = SDKROOT; };
 		585312F21F0E7339001B2787 /* GrabCutIOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GrabCutIOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		585312F31F0E7339001B2787 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -43,6 +47,14 @@
 		585312F61F0E7499001B2787 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		585312FB1F0E7A8D001B2787 /* GrabCutWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GrabCutWrapper.h; sourceTree = "<group>"; };
 		585312FC1F0E7A8D001B2787 /* GrabCutWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GrabCutWrapper.mm; sourceTree = "<group>"; };
+		586820B41F1384DE00970640 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		586820B51F139C8400970640 /* DrawableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawableView.swift; sourceTree = "<group>"; };
+		58C0B9121F14D9B80085680B /* CoreML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreML.framework; path = System/Library/Frameworks/CoreML.framework; sourceTree = SDKROOT; };
+		58C0B9131F14DA060085680B /* TinyYOLO.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = TinyYOLO.mlmodel; path = "../../../YOLO-CoreML-MPSNNGraph-master/TinyYOLO-CoreML/TinyYOLO-CoreML/TinyYOLO.mlmodel"; sourceTree = "<group>"; };
+		58C0B9151F14DA490085680B /* YOLO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YOLO.swift; path = "../../../YOLO-CoreML-MPSNNGraph-master/TinyYOLO-CoreML/TinyYOLO-CoreML/YOLO.swift"; sourceTree = "<group>"; };
+		58C0B9171F14DB1F0085680B /* UIImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+CVPixelBuffer.swift"; path = "../../../YOLO-CoreML-MPSNNGraph-master/TinyYOLO-CoreML/TinyYOLO-CoreML/UIImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
+		58C0B9191F14DB240085680B /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		58C0B91B1F14DB270085680B /* CVPixelBuffer+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CVPixelBuffer+Helpers.swift"; path = "../../../YOLO-CoreML-MPSNNGraph-master/TinyYOLO-CoreML/TinyYOLO-CoreML/CVPixelBuffer+Helpers.swift"; sourceTree = "<group>"; };
 		905F60E41B919E8C00094E52 /* GrabCutIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrabCutIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		905F60E81B919E8C00094E52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		905F60E91B919E8C00094E52 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -87,6 +99,7 @@
 		585312EF1F0E65D7001B2787 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				58C0B9121F14D9B80085680B /* CoreML.framework */,
 				585312F51F0E7499001B2787 /* CoreGraphics.framework */,
 				585312F61F0E7499001B2787 /* CoreImage.framework */,
 				585312F01F0E65D7001B2787 /* Vision.framework */,
@@ -119,8 +132,13 @@
 		905F60E61B919E8C00094E52 /* GrabCutIOS */ = {
 			isa = PBXGroup;
 			children = (
+				58C0B9131F14DA060085680B /* TinyYOLO.mlmodel */,
 				585312F31F0E7339001B2787 /* Home.swift */,
-				580EB0AE1F0F758000435BE3 /* Utilities.swift */,
+				58C0B9191F14DB240085680B /* Helpers.swift */,
+				58C0B91B1F14DB270085680B /* CVPixelBuffer+Helpers.swift */,
+				58C0B9171F14DB1F0085680B /* UIImage+CVPixelBuffer.swift */,
+				586820B41F1384DE00970640 /* Utilities.swift */,
+				586820B51F139C8400970640 /* DrawableView.swift */,
 				905F61111B91A43B00094E52 /* GrabCutManager.h */,
 				905F61121B91A43B00094E52 /* GrabCutManager.mm */,
 				585312FB1F0E7A8D001B2787 /* GrabCutWrapper.h */,
@@ -130,6 +148,7 @@
 				905F60F11B919E8C00094E52 /* Main.storyboard */,
 				905F60F41B919E8C00094E52 /* Images.xcassets */,
 				905F60F61B919E8C00094E52 /* LaunchScreen.xib */,
+				58C0B9151F14DA490085680B /* YOLO.swift */,
 				905F60E71B919E8C00094E52 /* Supporting Files */,
 				585312F21F0E7339001B2787 /* GrabCutIOS-Bridging-Header.h */,
 			);
@@ -264,11 +283,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58C0B9161F14DA4A0085680B /* YOLO.swift in Sources */,
+				586820B61F139C8400970640 /* DrawableView.swift in Sources */,
 				905F61161B91A43B00094E52 /* GrabCutManager.mm in Sources */,
+				58C0B91A1F14DB240085680B /* Helpers.swift in Sources */,
+				58C0B9141F14DA060085680B /* TinyYOLO.mlmodel in Sources */,
 				585312FD1F0E7A8D001B2787 /* GrabCutWrapper.mm in Sources */,
 				905F60ED1B919E8C00094E52 /* AppDelegate.m in Sources */,
-				580EB0AF1F0F758100435BE3 /* Utilities.swift in Sources */,
+				58C0B91C1F14DB270085680B /* CVPixelBuffer+Helpers.swift in Sources */,
 				585312F41F0E7339001B2787 /* Home.swift in Sources */,
+				58C0B9181F14DB1F0085680B /* UIImage+CVPixelBuffer.swift in Sources */,
 				905F60EA1B919E8C00094E52 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +363,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -392,6 +417,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
