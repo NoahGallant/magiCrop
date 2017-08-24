@@ -32,11 +32,13 @@
                                             <action selector="takePicture:" destination="XuG-5N-lE3" id="m9i-HD-eY7"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Crop" id="bKy-Cm-ajb">
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="iKV-CB-x2L"/>
+                                    <barButtonItem title="Objects" id="bKy-Cm-ajb">
                                         <connections>
                                             <action selector="cropObjects" destination="XuG-5N-lE3" id="xKQ-Yb-AmT"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="MbL-Lv-gSm"/>
                                     <barButtonItem title="Face" id="hiY-rg-1Ww">
                                         <connections>
                                             <action selector="cropFace" destination="XuG-5N-lE3" id="tEZ-WZ-vCM"/>
@@ -59,18 +61,11 @@
                                             <constraint firstAttribute="height" constant="375" id="1fH-IL-vyJ"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eKd-lb-1Pj">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" indicatorStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="y84-km-AD7">
                                         <rect key="frame" x="0.0" y="375" width="375" height="230"/>
-                                    </imageView>
+                                    </scrollView>
                                 </subviews>
                             </stackView>
-                            <view opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bV2-64-AC5" customClass="DrawableView" customModule="GrabCutIOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="XZY-Jl-XZv" appends="YES" id="pKB-oI-2Gc"/>
-                                </connections>
-                            </view>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="jIO-40-UOb">
                                 <rect key="frame" x="169" y="315" width="37" height="37"/>
                                 <constraints>
@@ -84,13 +79,9 @@
                         <constraints>
                             <constraint firstItem="9bE-fF-Jbg" firstAttribute="leading" secondItem="ghy-00-JFn" secondAttribute="leading" id="AO3-iV-MiP"/>
                             <constraint firstItem="9bE-fF-Jbg" firstAttribute="top" secondItem="Yow-Hl-BF2" secondAttribute="top" id="CMO-jO-7m5"/>
-                            <constraint firstItem="bV2-64-AC5" firstAttribute="leading" secondItem="9bE-fF-Jbg" secondAttribute="leading" id="Dlo-fZ-yzG"/>
                             <constraint firstItem="jIO-40-UOb" firstAttribute="centerY" secondItem="Yow-Hl-BF2" secondAttribute="centerY" id="M7S-GN-dTX"/>
                             <constraint firstItem="9bE-fF-Jbg" firstAttribute="trailing" secondItem="ghy-00-JFn" secondAttribute="trailing" id="SHU-TI-mTj"/>
-                            <constraint firstItem="jIO-40-UOb" firstAttribute="centerX" secondItem="bV2-64-AC5" secondAttribute="centerX" id="XJE-Ft-nk0"/>
-                            <constraint firstItem="bV2-64-AC5" firstAttribute="top" secondItem="9bE-fF-Jbg" secondAttribute="top" id="aZR-1B-JuN"/>
                             <constraint firstItem="jIO-40-UOb" firstAttribute="centerX" secondItem="ghy-00-JFn" secondAttribute="centerX" id="diy-8I-wCN"/>
-                            <constraint firstAttribute="bottom" secondItem="bV2-64-AC5" secondAttribute="bottom" constant="292" id="f8g-hX-SLO"/>
                             <constraint firstItem="jIO-40-UOb" firstAttribute="top" secondItem="03i-JN-3zf" secondAttribute="bottom" constant="295" id="i0z-nV-sG6"/>
                             <constraint firstItem="ghy-00-JFn" firstAttribute="top" secondItem="9bE-fF-Jbg" secondAttribute="bottom" constant="18" id="nE0-Vl-R1v"/>
                             <constraint firstAttribute="bottomMargin" secondItem="ghy-00-JFn" secondAttribute="bottom" constant="-1" id="vdc-Ha-Mdv"/>
@@ -99,18 +90,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="cutView" destination="eKd-lb-1Pj" id="WJ6-cc-dNy"/>
-                        <outlet property="drawView" destination="bV2-64-AC5" id="N0a-YU-aOy"/>
                         <outlet property="imageView" destination="u6C-L2-zoa" id="6lB-xs-g0l"/>
                         <outlet property="loader" destination="jIO-40-UOb" id="ga3-xf-790"/>
+                        <outlet property="pages" destination="y84-km-AD7" id="X7a-dm-Jh3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEL-G3-XJK" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="XZY-Jl-XZv">
-                    <connections>
-                        <action selector="pan:" destination="bV2-64-AC5" id="4oo-fX-Imp"/>
-                    </connections>
-                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="XZY-Jl-XZv"/>
             </objects>
             <point key="canvasLocation" x="69.599999999999994" y="136.28185907046478"/>
         </scene>
